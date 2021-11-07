@@ -1,0 +1,10 @@
+"
+[0:a]showfreqs=s=600x240:mode=line:colors=red|blue,pad=1920:1080:0:x=1000:y=350[vf];
+[0:a]showvolume=p=1,scale=1280:40[vv];
+[1:v]scale=500:500,rotate=a=0.4*t/2:ow=iw/1:oh=ow[disk];
+[vf][disk]overlay=(W-w)-1300:(H-h)/2,scale=1920:1080[l1];
+[l1][vv]overlay=x=700:y=800,scale=1920:1080[l2];
+[l2]drawtext=fontfile=NimbusRoman-BoldItalic.otf:textfile=metadata.txt:
+fontcolor=white:fontsize=50:box=1:boxcolor=black@0.5:boxborderw=5:x=(w-text_w)-500:y=(h-text_h)-800,
+format=yuv420p[fin]
+"
